@@ -1,10 +1,10 @@
 /*
-    exp.json - Configuration for exp-gzip
+    expansive.es - Configuration for exp-gzip
 
     Compress final content
  */
-{
-    control: {
+Expansive.load({
+    expansive: {
         transforms: {
             name:   'compress',
             from:   '*',
@@ -14,7 +14,7 @@
             script: `
                 function transform(contents, meta, service) {
                     let file = meta.public
-                    let dirs = meta.control.directories
+                    let dirs = expansive.directories
                     if (service.include || service.exclude) {
                         touch(file)
                         if (service.include && !matchFile(file, dirs.public, service.include)) {
@@ -41,4 +41,4 @@
             `
         }
     }
-}
+})
