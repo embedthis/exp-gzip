@@ -7,25 +7,16 @@ Expansive.load({
     expansive: {
         transforms: {
             name:   'compress',
-            from:   '*',
-            to:     '*',
-            include: null,  /* Array of glob */
-            exclude: null,  /* Array of glob */
+            input:   '*',
+            output:  '*',
+            files:   [ '**' ],
             script: `
                 function transform(contents, meta, service) {
-                    let file = meta.public
-                    let dirs = expansive.directories
-                    if (service.include || service.exclude) {
-                        touch(file)
-                        if (service.include && !matchFile(file, dirs.public, service.include)) {
+                    let file = meta.file
+                    if (file.glob(service.files)) {
+                        if (file.childOf(expansive.directories.public)) {
                             file.remove()
-                            return contents
                         }
-                        if (service.exclude && matchFile(file, dirs.public, service.exclude)) {
-                            file.remove()
-                            return contents
-                        }
-                        file.remove()
                         let gzip = Cmd.locate('gzip')
                         if (gzip) {
                             contents = run(gzip + ' -c', contents)
@@ -34,6 +25,7 @@ Expansive.load({
                             }
                         } else {
                             trace('Warn', 'Cannot find gzip')
+                            service.enable = false
                         }
                     }
                     return contents

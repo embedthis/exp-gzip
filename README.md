@@ -7,7 +7,7 @@ Provides the 'compress' service.
 
 ### To install:
 
-exp install exp-gzip
+exp install gzip
 
 ### Get Pak from
 
