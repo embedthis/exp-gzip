@@ -11,8 +11,8 @@ Provides the 'compress' service.
 
 ### To configure in expansive.json:
 
-* compress.enable -- Enable compressing all files using gzip.
-* compress.files -- Array of file patterns to compress. Defaults to *.html, *.css, *.js.
+* compress.enable &mdash; Enable compressing all files using gzip.
+* compress.files &mdash; Array of file patterns to compress. Defaults to *.html, *.css, *.js.
 
 ```
 {
