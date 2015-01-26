@@ -7,8 +7,24 @@ Provides the 'compress' service.
 
 ### To install:
 
-exp install gzip
+    pak install exp-gzip
+
+### To configure in expansive.json:
+
+* compress.enable -- Enable compressing all files using gzip.
+* compress.files -- Array of file patterns to compress. Defaults to *.html, *.css, *.js.
+
+```
+{
+    services: {
+        compress: {
+            enable: true,
+            files:  [ '**.html', '**.css', '**.js' ]
+        }
+    }
+}
+```
 
 ### Get Pak from
 
-[https://github.com/embedthis/pak](https://github.com/embedthis/pak)
+[https://embedthis.com/pak/](https://embedthis.com/pak/download.html)
