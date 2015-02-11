@@ -2,11 +2,17 @@
     "name": "exp-gzip",
     "description": "Gzip Plugin for Expansive",
     "version": "0.2.0",
-    "pak": ">=0.10",
     "keywords": [
         "expansive-plugin",
         "gzip"
     ],
     "licenses": "GPL",
-    "install": false
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/embedthis/exp-gzip.git"
+    },
+    "pak": {
+        "version": ">=0.10",
+        "install": false
+    }
 }

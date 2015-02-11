@@ -14,7 +14,7 @@ Expansive.load({
                     trace('Warn', 'Cannot find gzip')
                     return
                 }
-                for each (file in directories.documents.files(service.files, {directories: false})) {
+                for each (file in directories.dist.files(service.files, {directories: false})) {
                     file.joinExt('gz', true).remove()
                     Cmd.run('gzip ' + file, {filter: true})
                 }
