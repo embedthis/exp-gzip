@@ -12,7 +12,6 @@
         "url": "git://github.com/embedthis/exp-gzip.git"
     },
     "pak": {
-        "version": ">=0.10",
-        "install": false
+        "version": ">=0.10"
     }
 }
