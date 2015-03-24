@@ -6,7 +6,7 @@
 Expansive.load({
     transforms: {
         name:   'compress',
-        files:  [ '**.html', '**.css', '**.js' ],
+        files:  [ '**.html', '**.css', '**.js', '**.ttf' ],
         script: `
             function post(meta, service) {
                 let gzip = Cmd.locate('gzip')
