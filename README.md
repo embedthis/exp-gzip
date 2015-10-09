@@ -13,13 +13,15 @@ Provides the 'compress' service.
 
 * compress.enable &mdash; Enable compressing all files using gzip.
 * compress.files &mdash; Array of file patterns to compress. Defaults to *.html, *.css, *.js.
+* compress.keep &mdash; Keep uncompressed file after compressing. Defaults to true.
 
 ```
 {
     services: {
         compress: {
             enable: true,
-            files:  [ '**.html', '**.css', '**.js' ]
+            files:  [ '**.html', '**.css', '**.js' ],
+            keep:   false
         }
     }
 }
