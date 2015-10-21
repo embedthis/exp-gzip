@@ -12,7 +12,7 @@ Provides the 'compress' service.
 ### To configure in expansive.json:
 
 * gzip.enable &mdash; Enable compressing all files using gzip.
-* gzip.mappings &mdash; File extensions to compress. Defaults to: [ 'html', 'css', 'js', 'ttf' ].
+* gzip.mappings &mdash; File extensions to compress. Defaults to: [ 'html', 'css', 'js', 'ttf', 'xml' ].
 * gzip.keep &mdash; Keep uncompressed file after compressing. Defaults to true.
 
 ```
@@ -20,7 +20,7 @@ Provides the 'compress' service.
     services: {
         compress: {
             enable: true,
-            mappings:  [ 'html', 'css', 'js', 'ttf' ],
+            mappings:  [ 'html', 'css', 'js', 'ttf', 'xml' ],
             keep:   false
         }
     }
