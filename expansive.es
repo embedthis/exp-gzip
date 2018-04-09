@@ -49,9 +49,14 @@ Expansive.load({
                     if (file.exists && !dest.exists) {
                         vtrace('Compress', file)
                         if (transform.service.keep) {
-                            Cmd.run('gzip --keep "' + file + '"', {filter: true})
+                            //  Alpine does not have --keep
+                            //  Cmd.run('gzip --keep "' + file + '"', {filter: true})
+                            let keep = file.joinExt('keep', true)
+                            Path(file).copy(keep)
+                            Cmd.run('gzip "' + file + '"', {filter: true})
+                            Path(keep).rename(file)
                         } else {
-                            Cmd.run('gzip  "' + file + '"', {filter: true})
+                            Cmd.run('gzip "' + file + '"', {filter: true})
                         }
                     }
                 }
