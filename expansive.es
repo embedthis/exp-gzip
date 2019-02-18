@@ -15,7 +15,7 @@ Expansive.load({
             init: function(transform) {
                 transform.gzip = Cmd.locate('gzip')
                 if (!transform.gzip) {
-                    trace('Warn', 'Cannot find gzip')
+                    throw new Error('Cannot find gzip')
                 }
             },
 
