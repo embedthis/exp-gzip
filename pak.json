@@ -1,7 +1,7 @@
 {
     "name": "exp-gzip",
     "description": "Gzip Plugin for Expansive",
-    "version": "0.3.1",
+    "version": "1.0.0",
     "keywords": [
         "expansive-plugin",
         "gzip"
@@ -12,7 +12,7 @@
         "url": "git://github.com/embedthis/exp-gzip.git"
     },
     "devDependencies": {
-        "expansive": ">=0.7.0"
+        "expansive": ">=1.0.0"
     },
     "origin": "embedthis/exp-gzip"
 }
